@@ -1,0 +1,40 @@
+body {
+    width: 100%;
+    color: White;
+    font-family: cambria;
+    text-align: center;
+    background-image: url('/static/Texture-3-Tria-Site-min.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: relative;
+}
+
+.container {
+    width: 450px;
+    height: 200px; 
+    display: fixed;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgb(254, 253, 253);
+    border-radius: 5px;
+    align-items: center;
+    margin-left: 500px;
+    margin-top: 100px;
+}
+
+.result{
+    margin-left: 105px;
+    margin-top: 100px;
+}
+
+button {
+    font-family: cambria;
+    color: rgb(71, 137, 161);
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+}
+
+#output {
+    margin-top: 20px;
+}

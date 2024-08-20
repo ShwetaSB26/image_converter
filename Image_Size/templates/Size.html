@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Image Size Adjuster</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Size Adjuster</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <p><input type="file" id="image" name="image" accept="image/*" required><br></p>
+            <p><select id="option" name="option" required>
+                <option value="increase">Increase Size</option>
+                <option value="decrease">Decrease Size</option>
+            </select><br></p>
+            <label for="size_kb">Required size (KB):</label><br>
+            <input type="number" id="size_kb" name="size_kb" step="any" required><br>
+
+            <p><input type="submit" value="Apply"></p>
+        </form></div>
+        <div class="result">
+        {% if resized_img_data %}
+            <h2>Resized Image:</h2>
+            <img src="data:image/png;base64,{{ resized_img_data }}" alt="Resized Image">
+            <form action="/download/{{ option }}" method="post">
+                <input type="hidden" name="image" value="{{ resized_img_data }}">
+                <button type="submit">Download Resized Image</button>
+            </form></div>
+        {% endif %}
+    </div>
+</body>
+</html>
